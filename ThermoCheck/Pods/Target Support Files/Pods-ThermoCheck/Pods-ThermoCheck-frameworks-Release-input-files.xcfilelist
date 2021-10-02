@@ -1,0 +1,16 @@
+${PODS_ROOT}/Target Support Files/Pods-ThermoCheck/Pods-ThermoCheck-frameworks.sh
+${BUILT_PRODUCTS_DIR}/FBAEMKit/FBAEMKit.framework
+${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework
+${BUILT_PRODUCTS_DIR}/FBSDKCoreKit_Basics/FBSDKCoreKit_Basics.framework
+${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework
+${BUILT_PRODUCTS_DIR}/FirebaseAuth/FirebaseAuth.framework
+${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework
+${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework
+${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework
+${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework
+${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework
+${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework
+${BUILT_PRODUCTS_DIR}/LMGaugeViewSwift/LMGaugeViewSwift.framework
+${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework
+${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework
+${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework

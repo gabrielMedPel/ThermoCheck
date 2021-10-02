@@ -1,0 +1,6 @@
+framework module Pods_ThermoCheck {
+  umbrella header "Pods-ThermoCheck-umbrella.h"
+
+  export *
+  module * { export * }
+}

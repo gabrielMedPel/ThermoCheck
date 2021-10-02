@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16BE0A82DE902F56BF453C0A /* Pods_ThermoCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEEB24EE9EA5A89250829CCB /* Pods_ThermoCheck.framework */; };
+		4A2BBD202706166E00F7CB92 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2BBD1F2706166E00F7CB92 /* Authentication.swift */; };
+		4A2BBD222706176300F7CB92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2BBD212706176300F7CB92 /* LoginViewController.swift */; };
+		4A814D5F27061AD900278971 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D5E27061AD900278971 /* Router.swift */; };
+		4A814D6427061B2D00278971 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D6327061B2D00278971 /* UIViewController+extensions.swift */; };
+		4A814D6627061D1A00278971 /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D6527061D1A00278971 /* PKHUD.swift */; };
+		4A814D6827061D8A00278971 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D6727061D8A00278971 /* String+extensions.swift */; };
+		4A814D6B27061E6E00278971 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A814D6A27061E6E00278971 /* Login.storyboard */; };
+		4A814D6F27061EFD00278971 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D6E27061EFD00278971 /* RegisterViewController.swift */; };
+		4A814D7127062D3900278971 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D7027062D3900278971 /* SplashViewController.swift */; };
+		4A814D7327062E1200278971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A814D7227062E1200278971 /* Main.storyboard */; };
+		4A94CFFE27084A1100CE48D8 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 4A94CFFD27084A1100CE48D8 /* Charts */; };
+		4A94D00327086D3C00CE48D8 /* AddNewPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A94D00227086D3C00CE48D8 /* AddNewPointViewController.swift */; };
+		4AABF665270607F0008ED3AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABF664270607F0008ED3AC /* AppDelegate.swift */; };
+		4AABF667270607F0008ED3AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABF666270607F0008ED3AC /* SceneDelegate.swift */; };
+		4AABF669270607F0008ED3AC /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABF668270607F0008ED3AC /* ChartViewController.swift */; };
+		4AABF66C270607F0008ED3AC /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AABF66A270607F0008ED3AC /* Splash.storyboard */; };
+		4AABF66E270607F1008ED3AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AABF66D270607F1008ED3AC /* Assets.xcassets */; };
+		4AABF67927060A38008ED3AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AABF67827060A38008ED3AC /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4A2BBD1F2706166E00F7CB92 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		4A2BBD212706176300F7CB92 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4A814D5E27061AD900278971 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		4A814D6327061B2D00278971 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
+		4A814D6527061D1A00278971 /* PKHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKHUD.swift; sourceTree = "<group>"; };
+		4A814D6727061D8A00278971 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
+		4A814D6A27061E6E00278971 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		4A814D6E27061EFD00278971 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4A814D7027062D3900278971 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		4A814D7227062E1200278971 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4A94D00227086D3C00CE48D8 /* AddNewPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPointViewController.swift; sourceTree = "<group>"; };
+		4AABF661270607F0008ED3AC /* ThermoCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThermoCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AABF664270607F0008ED3AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4AABF666270607F0008ED3AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4AABF668270607F0008ED3AC /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		4AABF66B270607F0008ED3AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Splash.storyboard; sourceTree = "<group>"; };
+		4AABF66D270607F1008ED3AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AABF672270607F1008ED3AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AABF67827060A38008ED3AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		606682F8D84525768563DB8A /* Pods-ThermoCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThermoCheck.release.xcconfig"; path = "Target Support Files/Pods-ThermoCheck/Pods-ThermoCheck.release.xcconfig"; sourceTree = "<group>"; };
+		97A294C04EEB3F0AB22C74BD /* Pods-ThermoCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThermoCheck.debug.xcconfig"; path = "Target Support Files/Pods-ThermoCheck/Pods-ThermoCheck.debug.xcconfig"; sourceTree = "<group>"; };
+		EEEB24EE9EA5A89250829CCB /* Pods_ThermoCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThermoCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AABF65E270607F0008ED3AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16BE0A82DE902F56BF453C0A /* Pods_ThermoCheck.framework in Frameworks */,
+				4A94CFFE27084A1100CE48D8 /* Charts in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		483B1AB767A426D80A0B2123 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97A294C04EEB3F0AB22C74BD /* Pods-ThermoCheck.debug.xcconfig */,
+				606682F8D84525768563DB8A /* Pods-ThermoCheck.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4A814D6027061AE900278971 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A2BBD212706176300F7CB92 /* LoginViewController.swift */,
+				4AABF668270607F0008ED3AC /* ChartViewController.swift */,
+				4A814D6E27061EFD00278971 /* RegisterViewController.swift */,
+				4A814D7027062D3900278971 /* SplashViewController.swift */,
+				4A94D00227086D3C00CE48D8 /* AddNewPointViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		4A814D6127061AFA00278971 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A814D6327061B2D00278971 /* UIViewController+extensions.swift */,
+				4A814D6727061D8A00278971 /* String+extensions.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		4A814D6227061B0300278971 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				4A2BBD1F2706166E00F7CB92 /* Authentication.swift */,
+				4A814D5E27061AD900278971 /* Router.swift */,
+				4A814D6527061D1A00278971 /* PKHUD.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		4A814D6927061E5900278971 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4A814D7227062E1200278971 /* Main.storyboard */,
+				4AABF66A270607F0008ED3AC /* Splash.storyboard */,
+				4A814D6A27061E6E00278971 /* Login.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		4AABF658270607F0008ED3AC = {
+			isa = PBXGroup;
+			children = (
+				4AABF663270607F0008ED3AC /* ThermoCheck */,
+				4AABF662270607F0008ED3AC /* Products */,
+				483B1AB767A426D80A0B2123 /* Pods */,
+				EAC97D4C3FE0CBFB81BA02B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4AABF662270607F0008ED3AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AABF661270607F0008ED3AC /* ThermoCheck.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AABF663270607F0008ED3AC /* ThermoCheck */ = {
+			isa = PBXGroup;
+			children = (
+				4A814D6927061E5900278971 /* Storyboards */,
+				4A814D6227061B0300278971 /* utils */,
+				4A814D6127061AFA00278971 /* extensions */,
+				4A814D6027061AE900278971 /* controllers */,
+				4AABF664270607F0008ED3AC /* AppDelegate.swift */,
+				4AABF666270607F0008ED3AC /* SceneDelegate.swift */,
+				4AABF66D270607F1008ED3AC /* Assets.xcassets */,
+				4AABF672270607F1008ED3AC /* Info.plist */,
+				4AABF67827060A38008ED3AC /* GoogleService-Info.plist */,
+			);
+			path = ThermoCheck;
+			sourceTree = "<group>";
+		};
+		EAC97D4C3FE0CBFB81BA02B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEEB24EE9EA5A89250829CCB /* Pods_ThermoCheck.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AABF660270607F0008ED3AC /* ThermoCheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AABF675270607F1008ED3AC /* Build configuration list for PBXNativeTarget "ThermoCheck" */;
+			buildPhases = (
+				290B5C3C4EEF7292BBFFFF07 /* [CP] Check Pods Manifest.lock */,
+				4AABF65D270607F0008ED3AC /* Sources */,
+				4AABF65E270607F0008ED3AC /* Frameworks */,
+				4AABF65F270607F0008ED3AC /* Resources */,
+				3E45FB4A5D1F2E02838AB6A4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThermoCheck;
+			packageProductDependencies = (
+				4A94CFFD27084A1100CE48D8 /* Charts */,
+			);
+			productName = ThermoCheck;
+			productReference = 4AABF661270607F0008ED3AC /* ThermoCheck.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AABF659270607F0008ED3AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					4AABF660270607F0008ED3AC = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 4AABF65C270607F0008ED3AC /* Build configuration list for PBXProject "ThermoCheck" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AABF658270607F0008ED3AC;
+			packageReferences = (
+				4A94CFFC27084A1100CE48D8 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
+			productRefGroup = 4AABF662270607F0008ED3AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AABF660270607F0008ED3AC /* ThermoCheck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AABF65F270607F0008ED3AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AABF67927060A38008ED3AC /* GoogleService-Info.plist in Resources */,
+				4AABF66E270607F1008ED3AC /* Assets.xcassets in Resources */,
+				4A814D6B27061E6E00278971 /* Login.storyboard in Resources */,
+				4A814D7327062E1200278971 /* Main.storyboard in Resources */,
+				4AABF66C270607F0008ED3AC /* Splash.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		290B5C3C4EEF7292BBFFFF07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThermoCheck-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E45FB4A5D1F2E02838AB6A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThermoCheck/Pods-ThermoCheck-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThermoCheck/Pods-ThermoCheck-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThermoCheck/Pods-ThermoCheck-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AABF65D270607F0008ED3AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AABF669270607F0008ED3AC /* ChartViewController.swift in Sources */,
+				4A814D6F27061EFD00278971 /* RegisterViewController.swift in Sources */,
+				4A94D00327086D3C00CE48D8 /* AddNewPointViewController.swift in Sources */,
+				4AABF665270607F0008ED3AC /* AppDelegate.swift in Sources */,
+				4A814D6627061D1A00278971 /* PKHUD.swift in Sources */,
+				4A814D6427061B2D00278971 /* UIViewController+extensions.swift in Sources */,
+				4AABF667270607F0008ED3AC /* SceneDelegate.swift in Sources */,
+				4A2BBD222706176300F7CB92 /* LoginViewController.swift in Sources */,
+				4A814D5F27061AD900278971 /* Router.swift in Sources */,
+				4A814D6827061D8A00278971 /* String+extensions.swift in Sources */,
+				4A2BBD202706166E00F7CB92 /* Authentication.swift in Sources */,
+				4A814D7127062D3900278971 /* SplashViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4AABF66A270607F0008ED3AC /* Splash.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AABF66B270607F0008ED3AC /* Base */,
+			);
+			name = Splash.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4AABF673270607F1008ED3AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4AABF674270607F1008ED3AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4AABF676270607F1008ED3AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97A294C04EEB3F0AB22C74BD /* Pods-ThermoCheck.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3MC6XZKGGP;
+				INFOPLIST_FILE = ThermoCheck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.medpel.ThermoCheck;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AABF677270607F1008ED3AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 606682F8D84525768563DB8A /* Pods-ThermoCheck.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3MC6XZKGGP;
+				INFOPLIST_FILE = ThermoCheck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.medpel.ThermoCheck;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AABF65C270607F0008ED3AC /* Build configuration list for PBXProject "ThermoCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AABF673270607F1008ED3AC /* Debug */,
+				4AABF674270607F1008ED3AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AABF675270607F1008ED3AC /* Build configuration list for PBXNativeTarget "ThermoCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AABF676270607F1008ED3AC /* Debug */,
+				4AABF677270607F1008ED3AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A94CFFC27084A1100CE48D8 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A94CFFD27084A1100CE48D8 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A94CFFC27084A1100CE48D8 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4AABF659270607F0008ED3AC /* Project object */;
+}
