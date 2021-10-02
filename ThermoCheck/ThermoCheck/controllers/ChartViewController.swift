@@ -21,41 +21,54 @@ class ChartViewController: UIViewController {
     }
     
     var shouldHideData = false
-    
+    var entryPoints = [EntryPoint]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        Authentication.shared.fetchCurrentUser(viewController: self)
+        
+        configureChartView()
+        
+        EntryPoint.ref.child(Authentication.shared.getCurrentuserID()).child("entryPoints").observe(.childAdded) { [weak self] snapshot in
+            
+            guard let dict = snapshot.value as? [String: Any],
+                  let entrypoint = EntryPoint(dict: dict)
+                  else {return}
+            
+            
+            
+            
+            self?.entryPoints.append(entrypoint)
+            
+            print(self?.entryPoints.count)
+            print(self?.entryPoints[0].date)
+            
+            
+            self?.updateChartData()
+            self?.chartView.notifyDataSetChanged()
+        }
+    }
+    deinit {
+        EntryPoint.ref.removeAllObservers()
+    }
+    
+    func configureChartView(){
         self.title = "Combined Chart"
-//        self.options = [.toggleLineValues,
-//                        .toggleBarValues,
-//                        .saveToGallery,
-//                        .toggleData,
-//                        .toggleBarBorders,
-//                        .removeDataSet]
+
         
-//        chartView.delegate = self
-        
-        chartView.chartDescription.enabled = false
-        
+        chartView.chartDescription.enabled = true
         chartView.drawBarShadowEnabled = false
         chartView.highlightFullBarEnabled = false
         
         
-//        chartView.drawOrder = [DrawOrder.bar.rawValue,
-//                               DrawOrder.bubble.rawValue,
-//                               DrawOrder.candle.rawValue,
-//                               DrawOrder.line.rawValue,
-//                               DrawOrder.scatter.rawValue]
-        
+        chartView.extraTopOffset = 30
         let l = chartView.legend
         l.wordWrapEnabled = true
         l.horizontalAlignment = .center
         l.verticalAlignment = .bottom
         l.orientation = .horizontal
         l.drawInside = false
-//        chartView.legend = l
 
         let rightAxis = chartView.rightAxis
         rightAxis.axisMinimum = -10
@@ -68,12 +81,11 @@ class ChartViewController: UIViewController {
         
         
         let xAxis = chartView.xAxis
-        xAxis.labelPosition = .bothSided
+        xAxis.labelPosition = .bottom
         xAxis.granularity = 1
         
-//        xAxis.valueFormatter = self
+        xAxis.valueFormatter = self
         
-        self.updateChartData()
     }
     
     func updateChartData() {
@@ -83,6 +95,7 @@ class ChartViewController: UIViewController {
         }
 
         self.setChartData()
+        print("CHART UPDATED \(entryPoints.count)")
     }
     
     func setChartData() {
@@ -97,6 +110,7 @@ class ChartViewController: UIViewController {
         
         chartView.data = data
         chartView.animate(yAxisDuration: 2)
+
         
         
         
@@ -104,7 +118,12 @@ class ChartViewController: UIViewController {
     }
         
     func generateLineData() -> LineChartData {
-        let entries = [ChartDataEntry(x: 1, y: 20), ChartDataEntry(x: 2, y:35), ChartDataEntry(x: 3, y: -5)]
+        var entries = [ChartDataEntry]()
+
+        for i in 0...entryPoints.count-1{
+            let entry = ChartDataEntry(x: Double(i), y: Double(entryPoints[i].temperature))
+            entries.append(entry)
+        }
         
         let set = LineChartDataSet(entries: entries, label: "Temperature")
         set.setColor(.red)
@@ -126,7 +145,12 @@ class ChartViewController: UIViewController {
     }
     
     func generateBarData() -> BarChartData {
-        let entries = [BarChartDataEntry(x: 1, y: 30), BarChartDataEntry(x: 2, y: 80), BarChartDataEntry(x: 3, y: 60)]
+        var entries = [BarChartDataEntry]()
+
+        for i in 0...entryPoints.count-1{
+            let entry = BarChartDataEntry(x: Double(i), y: Double(entryPoints[i].humidity))
+            entries.append(entry)
+        }
         
         
         let set = BarChartDataSet(entries: entries, label: "Humidity")
@@ -137,16 +161,19 @@ class ChartViewController: UIViewController {
         set.barBorderColor = .black
         set.barBorderWidth = 0.5
         
+        
         let data = BarChartData(dataSet: set)
+        
         data.barWidth = 0.75
         
         return data
     }
-    
-    
-
-    // Swift // // Estender a amostra de código a partir de 6a. Adicionar o Login no Facebook ao seu código // Adicione ao seu método de viewDidLoad: loginButton.permissions = ["public_profile", "email"]
 
 
+}
+extension ChartViewController: AxisValueFormatter {
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        return entryPoints[Int(value) % entryPoints.count].date + " " + entryPoints[Int(value) % entryPoints.count].hour
+    }
 }
 

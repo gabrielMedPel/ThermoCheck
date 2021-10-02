@@ -32,6 +32,8 @@ class Authentication {
                 print(err)
                 completion(false)
             }else{
+                guard let result = result else {return}
+                                
                 completion(true)
 
             }
@@ -65,19 +67,33 @@ class Authentication {
         }
     }
     
+    fileprivate func routerToMain(_ viewController: UIViewController) {
+        if let vc = viewController as? SplashViewController {
+            Router.shared.toMain(viewController: vc)
+        }
+    }
+    
     func fetchCurrentUser(viewController: UIViewController){
+       
+        
         if let token = AccessToken.current, !token.isExpired {
-            Router.shared.toMain(viewController: viewController)
+            routerToMain(viewController)
         }else{
             if Auth.auth().currentUser != nil {
               // User is signed in.
-                Router.shared.toMain(viewController: viewController)
+                routerToMain(viewController)
+
             } else {
               // No user is signed in.
+                signOut(viewController: viewController)
                 Router.shared.toLogin(viewController: viewController)
             }
         }
         
+    }
+    
+    func getCurrentuserID()->String{
+        return Auth.auth().currentUser?.uid ?? ""
     }
     
     func signOut(viewController: UIViewController){

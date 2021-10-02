@@ -24,4 +24,9 @@ extension UITextField {
     func isEmail() -> Bool {
         return self.text!.isEmail()
     }
+    
+    func isNumber() -> Bool {
+        return CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: self.text!))
+
+    }
 }

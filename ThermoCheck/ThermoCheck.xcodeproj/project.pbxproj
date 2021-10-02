@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		16BE0A82DE902F56BF453C0A /* Pods_ThermoCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEEB24EE9EA5A89250829CCB /* Pods_ThermoCheck.framework */; };
+		4A00913F2708AD8600C09E15 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00913E2708AD8600C09E15 /* FirebaseModel.swift */; };
+		4A0091412708AF7500C09E15 /* EntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0091402708AF7500C09E15 /* EntryPoint.swift */; };
+		4A0091462708B90C00C09E15 /* DatabaseFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0091452708B90C00C09E15 /* DatabaseFB.swift */; };
 		4A2BBD202706166E00F7CB92 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2BBD1F2706166E00F7CB92 /* Authentication.swift */; };
 		4A2BBD222706176300F7CB92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2BBD212706176300F7CB92 /* LoginViewController.swift */; };
 		4A814D5F27061AD900278971 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D5E27061AD900278971 /* Router.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A00913E2708AD8600C09E15 /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
+		4A0091402708AF7500C09E15 /* EntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPoint.swift; sourceTree = "<group>"; };
+		4A0091452708B90C00C09E15 /* DatabaseFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseFB.swift; sourceTree = "<group>"; };
 		4A2BBD1F2706166E00F7CB92 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		4A2BBD212706176300F7CB92 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4A814D5E27061AD900278971 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -73,6 +79,23 @@
 				606682F8D84525768563DB8A /* Pods-ThermoCheck.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4A00913D2708AD7A00C09E15 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				4A00913E2708AD8600C09E15 /* FirebaseModel.swift */,
+				4A0091402708AF7500C09E15 /* EntryPoint.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		4A0091422708B8DF00C09E15 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				4A0091452708B90C00C09E15 /* DatabaseFB.swift */,
+			);
+			path = database;
 			sourceTree = "<group>";
 		};
 		4A814D6027061AE900278971 /* controllers */ = {
@@ -137,6 +160,8 @@
 		4AABF663270607F0008ED3AC /* ThermoCheck */ = {
 			isa = PBXGroup;
 			children = (
+				4A0091422708B8DF00C09E15 /* database */,
+				4A00913D2708AD7A00C09E15 /* models */,
 				4A814D6927061E5900278971 /* Storyboards */,
 				4A814D6227061B0300278971 /* utils */,
 				4A814D6127061AFA00278971 /* extensions */,
@@ -285,6 +310,7 @@
 				4A94D00327086D3C00CE48D8 /* AddNewPointViewController.swift in Sources */,
 				4AABF665270607F0008ED3AC /* AppDelegate.swift in Sources */,
 				4A814D6627061D1A00278971 /* PKHUD.swift in Sources */,
+				4A0091412708AF7500C09E15 /* EntryPoint.swift in Sources */,
 				4A814D6427061B2D00278971 /* UIViewController+extensions.swift in Sources */,
 				4AABF667270607F0008ED3AC /* SceneDelegate.swift in Sources */,
 				4A2BBD222706176300F7CB92 /* LoginViewController.swift in Sources */,
@@ -292,6 +318,8 @@
 				4A814D6827061D8A00278971 /* String+extensions.swift in Sources */,
 				4A2BBD202706166E00F7CB92 /* Authentication.swift in Sources */,
 				4A814D7127062D3900278971 /* SplashViewController.swift in Sources */,
+				4A0091462708B90C00C09E15 /* DatabaseFB.swift in Sources */,
+				4A00913F2708AD8600C09E15 /* FirebaseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
