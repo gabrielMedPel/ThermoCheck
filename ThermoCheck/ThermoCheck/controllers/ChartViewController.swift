@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FBSDKLoginKit
 import Charts
 
 
@@ -16,6 +14,18 @@ class ChartViewController: UIViewController {
 
     @IBOutlet weak var chartView: CombinedChartView!
 
+    @IBAction func clearPointsTapped(_ sender: UIButton) {
+        entryPoints.removeAll()
+        shouldHideData = true
+        updateChartData()
+        DatabaseFB.shared.removeAll(callback: { err, status in
+            if let err = err {
+                print(err)
+            }
+            
+        })
+        SQLCommands.clearEntrypoints()
+    }
     @IBAction func addNewPointTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "toAdd", sender: self)
     }
@@ -30,27 +40,28 @@ class ChartViewController: UIViewController {
         
         configureChartView()
         
+        addObserverOfEntryPoints()
+        
+    }
+    deinit {
+        EntryPoint.ref.removeAllObservers()
+    }
+    
+    func addObserverOfEntryPoints(){
         EntryPoint.ref.child(Authentication.shared.getCurrentuserID()).child("entryPoints").observe(.childAdded) { [weak self] snapshot in
             
             guard let dict = snapshot.value as? [String: Any],
                   let entrypoint = EntryPoint(dict: dict)
                   else {return}
             
-            
-            
-            
             self?.entryPoints.append(entrypoint)
-            
-            print(self?.entryPoints.count)
-            print(self?.entryPoints[0].date)
-            
-            
+            self?.shouldHideData = false
             self?.updateChartData()
             self?.chartView.notifyDataSetChanged()
+            
+            print(self?.entryPoints.count)
+            print(SQLCommands.getEntryPoints()?.count)
         }
-    }
-    deinit {
-        EntryPoint.ref.removeAllObservers()
     }
     
     func configureChartView(){
@@ -174,6 +185,7 @@ class ChartViewController: UIViewController {
 extension ChartViewController: AxisValueFormatter {
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return entryPoints[Int(value) % entryPoints.count].date + " " + entryPoints[Int(value) % entryPoints.count].hour
+        
     }
 }
 

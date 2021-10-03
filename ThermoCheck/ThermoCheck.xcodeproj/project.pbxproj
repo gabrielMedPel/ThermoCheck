@@ -13,6 +13,9 @@
 		4A0091462708B90C00C09E15 /* DatabaseFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0091452708B90C00C09E15 /* DatabaseFB.swift */; };
 		4A2BBD202706166E00F7CB92 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2BBD1F2706166E00F7CB92 /* Authentication.swift */; };
 		4A2BBD222706176300F7CB92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2BBD212706176300F7CB92 /* LoginViewController.swift */; };
+		4A6707EC270A1F7F001ED030 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 4A6707EB270A1F7F001ED030 /* SQLite */; };
+		4A6707EE270A1F94001ED030 /* DatabaseSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6707ED270A1F94001ED030 /* DatabaseSQL.swift */; };
+		4A6707F0270A2C12001ED030 /* SQLCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6707EF270A2C12001ED030 /* SQLCommands.swift */; };
 		4A814D5F27061AD900278971 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D5E27061AD900278971 /* Router.swift */; };
 		4A814D6427061B2D00278971 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D6327061B2D00278971 /* UIViewController+extensions.swift */; };
 		4A814D6627061D1A00278971 /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D6527061D1A00278971 /* PKHUD.swift */; };
@@ -37,6 +40,8 @@
 		4A0091452708B90C00C09E15 /* DatabaseFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseFB.swift; sourceTree = "<group>"; };
 		4A2BBD1F2706166E00F7CB92 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		4A2BBD212706176300F7CB92 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4A6707ED270A1F94001ED030 /* DatabaseSQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSQL.swift; sourceTree = "<group>"; };
+		4A6707EF270A2C12001ED030 /* SQLCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLCommands.swift; sourceTree = "<group>"; };
 		4A814D5E27061AD900278971 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4A814D6327061B2D00278971 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		4A814D6527061D1A00278971 /* PKHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKHUD.swift; sourceTree = "<group>"; };
@@ -64,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6707EC270A1F7F001ED030 /* SQLite in Frameworks */,
 				16BE0A82DE902F56BF453C0A /* Pods_ThermoCheck.framework in Frameworks */,
 				4A94CFFE27084A1100CE48D8 /* Charts in Frameworks */,
 			);
@@ -94,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				4A0091452708B90C00C09E15 /* DatabaseFB.swift */,
+				4A6707ED270A1F94001ED030 /* DatabaseSQL.swift */,
+				4A6707EF270A2C12001ED030 /* SQLCommands.swift */,
 			);
 			path = database;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 			name = ThermoCheck;
 			packageProductDependencies = (
 				4A94CFFD27084A1100CE48D8 /* Charts */,
+				4A6707EB270A1F7F001ED030 /* SQLite */,
 			);
 			productName = ThermoCheck;
 			productReference = 4AABF661270607F0008ED3AC /* ThermoCheck.app */;
@@ -233,6 +242,7 @@
 			mainGroup = 4AABF658270607F0008ED3AC;
 			packageReferences = (
 				4A94CFFC27084A1100CE48D8 /* XCRemoteSwiftPackageReference "Charts" */,
+				4A6707EA270A1F7F001ED030 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = 4AABF662270607F0008ED3AC /* Products */;
 			projectDirPath = "";
@@ -306,12 +316,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AABF669270607F0008ED3AC /* ChartViewController.swift in Sources */,
+				4A6707EE270A1F94001ED030 /* DatabaseSQL.swift in Sources */,
 				4A814D6F27061EFD00278971 /* RegisterViewController.swift in Sources */,
 				4A94D00327086D3C00CE48D8 /* AddNewPointViewController.swift in Sources */,
 				4AABF665270607F0008ED3AC /* AppDelegate.swift in Sources */,
 				4A814D6627061D1A00278971 /* PKHUD.swift in Sources */,
 				4A0091412708AF7500C09E15 /* EntryPoint.swift in Sources */,
 				4A814D6427061B2D00278971 /* UIViewController+extensions.swift in Sources */,
+				4A6707F0270A2C12001ED030 /* SQLCommands.swift in Sources */,
 				4AABF667270607F0008ED3AC /* SceneDelegate.swift in Sources */,
 				4A2BBD222706176300F7CB92 /* LoginViewController.swift in Sources */,
 				4A814D5F27061AD900278971 /* Router.swift in Sources */,
@@ -517,6 +529,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4A6707EA270A1F7F001ED030 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
 		4A94CFFC27084A1100CE48D8 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
@@ -528,6 +548,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4A6707EB270A1F7F001ED030 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A6707EA270A1F7F001ED030 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
 		4A94CFFD27084A1100CE48D8 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4A94CFFC27084A1100CE48D8 /* XCRemoteSwiftPackageReference "Charts" */;

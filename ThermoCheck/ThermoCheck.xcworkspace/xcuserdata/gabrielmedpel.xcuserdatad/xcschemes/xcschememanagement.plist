@@ -9,14 +9,14 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>23</integer>
 		</dict>
 		<key>PlaygroundChart (Playground) 2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>24</integer>
 		</dict>
 		<key>PlaygroundChart (Playground).xcscheme</key>
 		<dict>
@@ -24,6 +24,27 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>20</integer>
+		</dict>
+		<key>SQLite (Playground) 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>25</integer>
+		</dict>
+		<key>SQLite (Playground) 2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>26</integer>
+		</dict>
+		<key>SQLite (Playground).xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>22</integer>
 		</dict>
 	</dict>
 </dict>

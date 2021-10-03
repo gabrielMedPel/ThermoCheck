@@ -17,19 +17,32 @@ class AddNewPointViewController: UIViewController, GaugeViewDelegate {
         guard let hour = hourTextField.text else { return  }
         guard let temperature = temperatureTextField.text else { return }
         guard let humidity = humidityTextField.text else { return  }
-        
+
         let entryPoint = EntryPoint(date: date, hour: hour, temperature: Int(temperature) ?? 0, humidity: Int(humidity) ?? 0)
         
-        entryPoint.save { error, status in
+        saveFirebase(entryPoint: entryPoint)
+       
+
+    }
+    
+    func saveSQL(entryPoint: EntryPoint){
+        DatabaseSQL.shared.createtable()
+        SQLCommands.insert(entryPoint)
+    }
+    func saveFirebase(entryPoint: EntryPoint){
+       
+
+        entryPoint.save { [weak self] error, status in
             if let error = error {
                 print(error)
                 return
             }else{
                 print("EntryPointSaved!!!!!")
+                self?.saveSQL(entryPoint: entryPoint)
 
-                self.dismiss(animated: true)
+                self?.dismiss(animated: true)
             }
-            
+
         }
     }
     
@@ -39,7 +52,15 @@ class AddNewPointViewController: UIViewController, GaugeViewDelegate {
     @IBOutlet weak var temperatureTextField: UITextField!
     @IBOutlet weak var hourTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
-    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureGauge()
+        addTargetToTextFields()
+        
+
+    }
     
     func ringStokeColor(gaugeView: GaugeView, value: Double) -> UIColor {
         if gaugeView.maxValue == 100{
@@ -48,17 +69,13 @@ class AddNewPointViewController: UIViewController, GaugeViewDelegate {
             return .red
         }
     }
-    
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configureGauge()
-        
+    
+    func addTargetToTextFields(){
         temperatureTextField.addTarget(self, action: #selector(tempTextFieldDidChange), for: .editingChanged)
         humidityTextField.addTarget(self, action: #selector(humiTextFieldDidChange), for: .editingChanged)
-
     }
+    
     @objc
     func tempTextFieldDidChange(){
         var tempNum = Double(temperatureTextField.text ?? "") ?? 0
