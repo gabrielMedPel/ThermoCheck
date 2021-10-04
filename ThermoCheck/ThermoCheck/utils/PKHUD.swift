@@ -29,18 +29,15 @@ extension ShowHUD{
 extension UIViewController: ShowHUD{}
 
 protocol UserValidation: ShowHUD {
-    //1) you must have a TextField called emailTextField
-    var emailTextField: UITextField!{get}
+    var usernameTextField: UITextField!{get}
     var passwordTextField: UITextField!{get}
 }
 
-//client side validation (אין טעם לנסות משהו שברור שלא יעבוד)
 extension UserValidation{
     
-    var isEmailValid: Bool{
-        //professional code for email checking
-        guard emailTextField.isEmail() else {
-            showError(title: "Email must be valid")
+    var isUsernameValid: Bool{
+        guard usernameTextField.text?.count ?? 0 > 2 else {
+            showError(title: "Username must be at least 3 characters")
             return false
         }
         return true
@@ -48,7 +45,8 @@ extension UserValidation{
     
     var isPasswordValid: Bool{
         guard let password = passwordTextField.text, password.count >= 6  else {
-            showError(title: "Password must be valid")
+            showError(title: "Password must be at least 6 digits")
+            
             return false
         }
         return true

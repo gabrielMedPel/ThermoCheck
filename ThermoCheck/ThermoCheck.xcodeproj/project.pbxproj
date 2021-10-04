@@ -19,7 +19,6 @@
 		4A814D5F27061AD900278971 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D5E27061AD900278971 /* Router.swift */; };
 		4A814D6427061B2D00278971 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D6327061B2D00278971 /* UIViewController+extensions.swift */; };
 		4A814D6627061D1A00278971 /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D6527061D1A00278971 /* PKHUD.swift */; };
-		4A814D6827061D8A00278971 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D6727061D8A00278971 /* String+extensions.swift */; };
 		4A814D6B27061E6E00278971 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A814D6A27061E6E00278971 /* Login.storyboard */; };
 		4A814D6F27061EFD00278971 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D6E27061EFD00278971 /* RegisterViewController.swift */; };
 		4A814D7127062D3900278971 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A814D7027062D3900278971 /* SplashViewController.swift */; };
@@ -45,7 +44,6 @@
 		4A814D5E27061AD900278971 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4A814D6327061B2D00278971 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		4A814D6527061D1A00278971 /* PKHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKHUD.swift; sourceTree = "<group>"; };
-		4A814D6727061D8A00278971 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		4A814D6A27061E6E00278971 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		4A814D6E27061EFD00278971 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4A814D7027062D3900278971 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				4A814D6327061B2D00278971 /* UIViewController+extensions.swift */,
-				4A814D6727061D8A00278971 /* String+extensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -327,7 +324,6 @@
 				4AABF667270607F0008ED3AC /* SceneDelegate.swift in Sources */,
 				4A2BBD222706176300F7CB92 /* LoginViewController.swift in Sources */,
 				4A814D5F27061AD900278971 /* Router.swift in Sources */,
-				4A814D6827061D8A00278971 /* String+extensions.swift in Sources */,
 				4A2BBD202706166E00F7CB92 /* Authentication.swift in Sources */,
 				4A814D7127062D3900278971 /* SplashViewController.swift in Sources */,
 				4A0091462708B90C00C09E15 /* DatabaseFB.swift in Sources */,

@@ -9,34 +9,30 @@ import Foundation
 
 
 class EntryPoint: FirebaseModel {
-    let date: String
-    let hour: String
+    let dateTime: String
     let temperature:Int
     let humidity:Int
  
-    init(date:String, hour:String, temperature:Int, humidity:Int) {
+    init(dateTime:String, temperature:Int, humidity:Int) {
         
-        self.date = date
-        self.hour = hour
+        self.dateTime = dateTime
         self.temperature = temperature
         self.humidity = humidity
     }
  
     var dict: [String : Any] {
-        let dict: [String: Any] = ["date":date, "hour": hour, "temperature":temperature, "humidity":humidity]
+        let dict: [String: Any] = ["dateTime":dateTime, "temperature":temperature, "humidity":humidity]
         
         return dict
     }
     
     required init?(dict: [String : Any]) {
-        guard let date = dict["date"] as? String,
-              let hour = dict["hour"] as? String,
+        guard let dateTime = dict["dateTime"] as? String,
               let temperature = dict["temperature"] as? Int,
               let humidity = dict["humidity"] as? Int
         else {return nil}
         
-        self.date = date
-        self.hour = hour
+        self.dateTime = dateTime
         self.temperature = temperature
         self.humidity = humidity
     }

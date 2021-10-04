@@ -32,7 +32,7 @@ class Authentication {
                 print(err)
                 completion(false)
             }else{
-                guard let result = result else {return}
+                guard result != nil else {return}
                                 
                 completion(true)
 
@@ -40,7 +40,7 @@ class Authentication {
         }
     }
         
-    func register(email: String, password: String, username: String, completion: @escaping (Bool, String)->Void){
+    func register(email: String, password: String, completion: @escaping (Bool, String)->Void){
         Auth.auth().createUser(withEmail: email,
                                password: password) { (result, err) in
             if let err = err{
@@ -48,22 +48,13 @@ class Authentication {
                 return
             }
 
-            guard let user = result?.user else {
+            guard (result?.user) != nil else {
                 completion(false, "No User")
                 return
             }
-             //user profile additional info:
-            let profileChangeReqeust = user.createProfileChangeRequest()
-            profileChangeReqeust.displayName = username
             
-            profileChangeReqeust.commitChanges { (error) in
-                if let error = error {
-                    //change name failed
-                   completion(false, error.localizedDescription)
-                }else {
-                    completion(true, "Done")
-                }
-            }
+            completion(true, "Done")
+           
         }
     }
     

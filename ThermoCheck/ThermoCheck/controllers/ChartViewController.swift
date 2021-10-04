@@ -37,6 +37,7 @@ class ChartViewController: UIViewController {
         super.viewDidLoad()
         
         Authentication.shared.fetchCurrentUser(viewController: self)
+        Authentication.shared.signOut(viewController: self)
         
         configureChartView()
         
@@ -184,7 +185,7 @@ class ChartViewController: UIViewController {
 }
 extension ChartViewController: AxisValueFormatter {
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        return entryPoints[Int(value) % entryPoints.count].date + " " + entryPoints[Int(value) % entryPoints.count].hour
+       return entryPoints[Int(value) % entryPoints.count].dateTime
         
     }
 }

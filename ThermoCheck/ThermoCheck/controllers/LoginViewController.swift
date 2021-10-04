@@ -21,7 +21,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                 }
             }else{
                 DispatchQueue.main.async {
-                    self.showError(title: "Try Again")
+                    self.showError(title: "Some went wrong. Try Again")
                 }
             }
         }
@@ -32,7 +32,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     
 
     @IBOutlet weak var stack: UIStackView!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
@@ -53,15 +53,15 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
-        guard let email = emailTextField.text, isEmailValid,
+        guard let username = usernameTextField.text, isUsernameValid,
               let password = passwordTextField.text, isPasswordValid else {
             return
         }
         
-        sender.isEnabled = false //can't click Register twice
+        sender.isEnabled = false //can't click Login twice
         showProgress(title: "Login...")
         
-        Authentication.shared.login(email: email, password: password) { (status) in
+        Authentication.shared.login(email: username, password: password) { (status) in
             if status{
                 DispatchQueue.main.async {
                     self.showSuccess(title: "")
@@ -69,7 +69,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
                 }
             }else{
                 DispatchQueue.main.async {
-                    self.showError(title: "Try Again")
+                    self.showError(title: "Something went wrong. Check the fields and Try Again")
                 }
             }
         }

@@ -9,11 +9,22 @@ import UIKit
 
 class SplashViewController: UIViewController {
 
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        leadingConstraint.constant = 0
+        // TODO 3
 
-        Authentication.shared.fetchCurrentUser(viewController: self)
+        UIView.animate(withDuration: 3) { [weak self] in
+          self?.view.layoutIfNeeded()
+        } completion: { status in
+            Authentication.shared.fetchCurrentUser(viewController: self)
+        }
+        
+
+       
         
     }
 

@@ -77,32 +77,63 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cYV-oY-R6g">
-                                <rect key="frame" x="16" y="54" width="382" height="184"/>
+                                <rect key="frame" x="16" y="54" width="382" height="521"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDg-73-XlR">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lel-HR-URA">
-                                        <rect key="frame" x="0.0" y="50" width="382" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Temperature" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hd-ue-V8f">
-                                        <rect key="frame" x="0.0" y="100" width="382" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Humidity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lZL-IM-ynu">
-                                        <rect key="frame" x="0.0" y="150" width="382" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the date and time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyu-ag-AP7">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="JCf-aE-gAZ">
+                                        <rect key="frame" x="0.0" y="36.5" width="382" height="216"/>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                            <!--1970-01-01 11:00:00 +0000-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="662641200">
+                                            <!--2021-12-31 11:00:00 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BBF-OS-bqf">
+                                        <rect key="frame" x="0.0" y="268.5" width="382" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0c9-uH-j4Y">
+                                                <rect key="frame" x="0.0" y="0.0" width="183" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObE-Is-psd">
+                                                <rect key="frame" x="199" y="0.0" width="183" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Cry-De-Ksh">
+                                        <rect key="frame" x="0.0" y="305" width="382" height="216"/>
+                                        <subviews>
+                                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iau-NR-7LK">
+                                                <rect key="frame" x="0.0" y="0.0" width="183" height="216"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="ChK-V9-3VJ" id="pZl-M5-pq9"/>
+                                                    <outlet property="delegate" destination="ChK-V9-3VJ" id="nO1-iJ-7PP"/>
+                                                </connections>
+                                            </pickerView>
+                                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqg-Tk-mfa">
+                                                <rect key="frame" x="199" y="0.0" width="183" height="216"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="ChK-V9-3VJ" id="Yf0-UU-83V"/>
+                                                    <outlet property="delegate" destination="ChK-V9-3VJ" id="8DY-89-YSY"/>
+                                                </connections>
+                                            </pickerView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="KXE-od-deX">
-                                <rect key="frame" x="16" y="270" width="382" height="200"/>
+                                <rect key="frame" x="16" y="591" width="382" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJP-f5-qJU" customClass="GaugeView" customModule="LMGaugeViewSwift">
                                         <rect key="frame" x="0.0" y="0.0" width="168" height="200"/>
@@ -113,9 +144,6 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="M1J-12-y0j"/>
-                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpE-qS-TKg">
                                 <rect key="frame" x="364" y="8" width="34" height="30"/>
@@ -131,7 +159,8 @@
                             <constraint firstItem="9oT-qb-eTx" firstAttribute="trailing" secondItem="JpE-qS-TKg" secondAttribute="trailing" constant="16" id="02C-l2-eyx"/>
                             <constraint firstItem="5yd-4u-uE0" firstAttribute="top" secondItem="9oT-qb-eTx" secondAttribute="top" constant="8" id="77H-FK-PCO"/>
                             <constraint firstItem="cYV-oY-R6g" firstAttribute="leading" secondItem="9oT-qb-eTx" secondAttribute="leading" constant="16" id="8KA-ku-qb9"/>
-                            <constraint firstItem="KXE-od-deX" firstAttribute="top" secondItem="cYV-oY-R6g" secondAttribute="bottom" constant="32" id="ADQ-OO-38Q"/>
+                            <constraint firstItem="cYV-oY-R6g" firstAttribute="height" secondItem="W97-69-Yz3" secondAttribute="height" multiplier="0.618765" id="9hT-Fb-rwl"/>
+                            <constraint firstItem="KXE-od-deX" firstAttribute="top" secondItem="cYV-oY-R6g" secondAttribute="bottom" constant="16" id="ADQ-OO-38Q"/>
                             <constraint firstItem="5yd-4u-uE0" firstAttribute="leading" secondItem="9oT-qb-eTx" secondAttribute="leading" constant="8" id="C0t-nk-ngY"/>
                             <constraint firstItem="KXE-od-deX" firstAttribute="leading" secondItem="9oT-qb-eTx" secondAttribute="leading" constant="16" id="D8E-4j-VwN"/>
                             <constraint firstItem="9oT-qb-eTx" firstAttribute="trailing" secondItem="5yd-4u-uE0" secondAttribute="trailing" constant="8" id="TRh-mh-W1S"/>
@@ -139,15 +168,15 @@
                             <constraint firstItem="9oT-qb-eTx" firstAttribute="trailing" secondItem="KXE-od-deX" secondAttribute="trailing" constant="16" id="eqJ-Tk-2R4"/>
                             <constraint firstItem="9oT-qb-eTx" firstAttribute="trailing" secondItem="cYV-oY-R6g" secondAttribute="trailing" constant="16" id="j8e-zN-2jT"/>
                             <constraint firstItem="cYV-oY-R6g" firstAttribute="top" secondItem="5yd-4u-uE0" secondAttribute="bottom" constant="16" id="o1A-Se-qU9"/>
+                            <constraint firstItem="KXE-od-deX" firstAttribute="height" secondItem="W97-69-Yz3" secondAttribute="height" multiplier="0.23753" id="ojU-DW-as3"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dateTextField" destination="RDg-73-XlR" id="xuq-JG-hRL"/>
-                        <outlet property="hourTextField" destination="Lel-HR-URA" id="KhW-vi-MeL"/>
+                        <outlet property="dateTimePicker" destination="JCf-aE-gAZ" id="whp-Z5-wQg"/>
                         <outlet property="humidityGauge" destination="yZd-fG-72A" id="0JJ-nW-O2k"/>
-                        <outlet property="humidityTextField" destination="lZL-IM-ynu" id="AXU-pv-2jT"/>
+                        <outlet property="humidityPicker" destination="sqg-Tk-mfa" id="ziD-A2-MDV"/>
                         <outlet property="temperatureGauge" destination="bJP-f5-qJU" id="3c6-ya-FGe"/>
-                        <outlet property="temperatureTextField" destination="4hd-ue-V8f" id="oL0-QY-jK8"/>
+                        <outlet property="temperaturePicker" destination="iau-NR-7LK" id="O6T-jn-Ipp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmD-5R-g8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

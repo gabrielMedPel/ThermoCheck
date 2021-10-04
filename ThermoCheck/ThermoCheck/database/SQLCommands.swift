@@ -11,8 +11,7 @@ import SQLite
 class SQLCommands {
     static var table = Table("entryPoint")
     
-    static let date = Expression<String>("date")
-    static let hour = Expression<String>("hour")
+    static let dateTime = Expression<String>("dateTime")
     static let temperature = Expression<Int>("temperature")
     static let humidity = Expression<Int>("humidity")
     
@@ -24,8 +23,7 @@ class SQLCommands {
         
         do {
             try db.run(table.create(ifNotExists: true) { t in
-                t.column(date)
-                t.column(hour)
+                t.column(dateTime)
                 t.column(temperature)
                 t.column(humidity)
             })
@@ -40,7 +38,7 @@ class SQLCommands {
         }
         
         do {
-            try db.run(table.insert(date <- "22/22/2222", hour <- "22:22", temperature <- 30, humidity <- 100))
+            try db.run(table.insert(dateTime <- entryPoint.dateTime, temperature <- entryPoint.temperature, humidity <- entryPoint.humidity))
             return true
         } catch {
             print(error)
@@ -58,7 +56,7 @@ class SQLCommands {
         
         do {
             for entryPoint in try db.prepare(table){
-                let entryPoint = EntryPoint(date: entryPoint[date], hour: entryPoint[hour], temperature: entryPoint[temperature], humidity: entryPoint[humidity])
+                let entryPoint = EntryPoint(dateTime: entryPoint[dateTime], temperature: entryPoint[temperature], humidity: entryPoint[humidity])
                 
                 entryPoints.append(entryPoint)
                 
