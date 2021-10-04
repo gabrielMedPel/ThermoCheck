@@ -12,14 +12,14 @@ class EntryPoint: FirebaseModel {
     let dateTime: String
     let temperature:Int
     let humidity:Int
- 
+    
     init(dateTime:String, temperature:Int, humidity:Int) {
         
         self.dateTime = dateTime
         self.temperature = temperature
         self.humidity = humidity
     }
- 
+    
     var dict: [String : Any] {
         let dict: [String: Any] = ["dateTime":dateTime, "temperature":temperature, "humidity":humidity]
         

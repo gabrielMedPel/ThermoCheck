@@ -23,16 +23,14 @@ class AddNewPointViewController: UIViewController{
     var humiditySelected = 0
     
     @IBAction func saveTapped(_ sender: UIButton) {
+        showProgress(title: "")
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
         let selectedDate: String = dateFormatter.string(from: dateTimePicker.date)
         
-        
         let entryPoint = EntryPoint(dateTime: selectedDate, temperature: temperatureSelected, humidity: humiditySelected)
         
         saveFirebase(entryPoint: entryPoint)
-        
-        
     }
     
     func saveSQL(entryPoint: EntryPoint){
@@ -48,19 +46,17 @@ class AddNewPointViewController: UIViewController{
             }else{
                 print("EntryPointSaved!")
                 self?.saveSQL(entryPoint: entryPoint)
-                
+                self?.showSuccess(title: "")
                 self?.dismiss(animated: true)
             }
-            
         }
     }
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureGauge()
         configurePickers()
-        
     }
     
     func configureGauge(){
@@ -72,7 +68,6 @@ class AddNewPointViewController: UIViewController{
         temperatureGauge.showMinMaxValue = false
         temperatureGauge.value = -10
         
-        
         temperatureGauge.valueTextColor = .red
         temperatureGauge.delegate = self
         
@@ -81,16 +76,14 @@ class AddNewPointViewController: UIViewController{
         humidityGauge.numOfDivisions = 0
         humidityGauge.value = 0
         
-        
         humidityGauge.unitOfMeasurement = "%"
         humidityGauge.unitOfMeasurementFont = .boldSystemFont(ofSize: 15)
-
+        
         humidityGauge.showMinMaxValue = false
         
         
         humidityGauge.valueTextColor = .blue
         humidityGauge.delegate = self
-        
     }
     
     func configurePickers(){
@@ -101,11 +94,7 @@ class AddNewPointViewController: UIViewController{
         for i in 0...100 {
             humidityValues.append(i)
         }
-        
     }
-    
-   
-    
 }
 
 extension AddNewPointViewController: GaugeViewDelegate {
@@ -146,6 +135,5 @@ extension AddNewPointViewController: UIPickerViewDelegate, UIPickerViewDataSourc
             humiditySelected = humidityValues[row]
             humidityGauge.value = Double(humidityValues[row])
         }
-        
     }
 }

@@ -17,21 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clouds" translatesAutoresizingMaskIntoConstraints="NO" id="TFY-Y6-Gst">
-                                <rect key="frame" x="-243" y="0.0" width="800" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clouds" translatesAutoresizingMaskIntoConstraints="NO" id="TFY-Y6-Gst">
+                                <rect key="frame" x="-593" y="-85.5" width="1600" height="1067"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TFY-Y6-Gst" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2fy-Fv-jGo"/>
-                            <constraint firstItem="TFY-Y6-Gst" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="4eY-uI-FNy"/>
-                            <constraint firstItem="TFY-Y6-Gst" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1.93237" id="SXr-Ti-EDY"/>
-                            <constraint firstItem="TFY-Y6-Gst" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-50" id="lts-lM-Rmy"/>
+                            <constraint firstItem="TFY-Y6-Gst" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CWF-eV-Rap"/>
+                            <constraint firstItem="TFY-Y6-Gst" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FoD-WY-RqD"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="leadingConstraint" destination="lts-lM-Rmy" id="OR3-Sp-fbc"/>
+                        <outlet property="cloudsImageView" destination="TFY-Y6-Gst" id="s39-Wm-PE3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

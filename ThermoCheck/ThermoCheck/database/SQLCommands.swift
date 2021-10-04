@@ -9,8 +9,8 @@ import Foundation
 import SQLite
 
 class SQLCommands {
-    static var table = Table("entryPoint")
     
+    static var table = Table("entryPoint")
     static let dateTime = Expression<String>("dateTime")
     static let temperature = Expression<Int>("temperature")
     static let humidity = Expression<Int>("humidity")
@@ -31,6 +31,7 @@ class SQLCommands {
             print("\(error)")
         }
     }
+    
     static func insert(_ entryPoint: EntryPoint) -> Bool?{
         guard let db = DatabaseSQL.shared.db else {
             print("DataBase Connection Error")

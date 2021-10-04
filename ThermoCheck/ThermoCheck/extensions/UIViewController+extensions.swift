@@ -12,6 +12,7 @@ extension UIViewController {
                              completion: (() -> Void)? = nil) {
         DispatchQueue.main.async {
             viewController.modalPresentationStyle = .fullScreen
+            viewController.modalTransitionStyle = .crossDissolve
             self.present(viewController, animated: animated, completion: completion)
         }
     }

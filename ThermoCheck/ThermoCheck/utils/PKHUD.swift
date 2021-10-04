@@ -15,7 +15,7 @@ extension ShowHUD{
     }
     
     func showError(title:String, subtitle: String? = nil){
-        HUD.flash(.labeledError(title: title, subtitle: subtitle), delay: 1)
+        HUD.flash(.labeledError(title: title, subtitle: subtitle), delay: 2)
     }
     
     func showLabel(title:String){
@@ -29,15 +29,18 @@ extension ShowHUD{
 extension UIViewController: ShowHUD{}
 
 protocol UserValidation: ShowHUD {
-    var usernameTextField: UITextField!{get}
+    //1) you must have a TextField called emailTextField
+    var emailTextField: UITextField!{get}
     var passwordTextField: UITextField!{get}
 }
 
+//client side validation (אין טעם לנסות משהו שברור שלא יעבוד)
 extension UserValidation{
     
-    var isUsernameValid: Bool{
-        guard usernameTextField.text?.count ?? 0 > 2 else {
-            showError(title: "Username must be at least 3 characters")
+    var isEmailValid: Bool{
+        //professional code for email checking
+        guard emailTextField.isEmail() else {
+            showError(title: "Email must be valid. Check and try again!")
             return false
         }
         return true
@@ -45,8 +48,7 @@ extension UserValidation{
     
     var isPasswordValid: Bool{
         guard let password = passwordTextField.text, password.count >= 6  else {
-            showError(title: "Password must be at least 6 digits")
-            
+            showError(title: "Password must be at least 6 charters long")
             return false
         }
         return true

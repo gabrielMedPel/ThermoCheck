@@ -11,6 +11,7 @@
 		4A00913F2708AD8600C09E15 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00913E2708AD8600C09E15 /* FirebaseModel.swift */; };
 		4A0091412708AF7500C09E15 /* EntryPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0091402708AF7500C09E15 /* EntryPoint.swift */; };
 		4A0091462708B90C00C09E15 /* DatabaseFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0091452708B90C00C09E15 /* DatabaseFB.swift */; };
+		4A19E6E0270B90F6000736DB /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A19E6DF270B90F6000736DB /* String+extensions.swift */; };
 		4A2BBD202706166E00F7CB92 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2BBD1F2706166E00F7CB92 /* Authentication.swift */; };
 		4A2BBD222706176300F7CB92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2BBD212706176300F7CB92 /* LoginViewController.swift */; };
 		4A6707EC270A1F7F001ED030 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 4A6707EB270A1F7F001ED030 /* SQLite */; };
@@ -37,6 +38,7 @@
 		4A00913E2708AD8600C09E15 /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
 		4A0091402708AF7500C09E15 /* EntryPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPoint.swift; sourceTree = "<group>"; };
 		4A0091452708B90C00C09E15 /* DatabaseFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseFB.swift; sourceTree = "<group>"; };
+		4A19E6DF270B90F6000736DB /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		4A2BBD1F2706166E00F7CB92 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		4A2BBD212706176300F7CB92 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4A6707ED270A1F94001ED030 /* DatabaseSQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSQL.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				4A814D6327061B2D00278971 /* UIViewController+extensions.swift */,
+				4A19E6DF270B90F6000736DB /* String+extensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				4A6707EE270A1F94001ED030 /* DatabaseSQL.swift in Sources */,
 				4A814D6F27061EFD00278971 /* RegisterViewController.swift in Sources */,
 				4A94D00327086D3C00CE48D8 /* AddNewPointViewController.swift in Sources */,
+				4A19E6E0270B90F6000736DB /* String+extensions.swift in Sources */,
 				4AABF665270607F0008ED3AC /* AppDelegate.swift in Sources */,
 				4A814D6627061D1A00278971 /* PKHUD.swift in Sources */,
 				4A0091412708AF7500C09E15 /* EntryPoint.swift in Sources */,

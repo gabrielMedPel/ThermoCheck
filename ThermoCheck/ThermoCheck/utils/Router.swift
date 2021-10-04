@@ -17,12 +17,14 @@ class Router{
             viewController.presentInFullScreen(vc, animated: true)
         }
     }
+    
     func toLogin(viewController: UIViewController){
         DispatchQueue.main.async {
             let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "login")
             viewController.presentInFullScreen(vc, animated: true)
         }
     }
+    
     func toRegister(viewController: UIViewController){
         DispatchQueue.main.async {
             let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "register")
