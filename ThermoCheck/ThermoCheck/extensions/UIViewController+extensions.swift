@@ -10,10 +10,10 @@ extension UIViewController {
     func presentInFullScreen(_ viewController: UIViewController,
                              animated: Bool,
                              completion: (() -> Void)? = nil) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async {[weak self] in
             viewController.modalPresentationStyle = .fullScreen
             viewController.modalTransitionStyle = .crossDissolve
-            self.present(viewController, animated: animated, completion: completion)
+            self?.present(viewController, animated: animated, completion: completion)
         }
     }
     

@@ -60,7 +60,6 @@ class SQLCommands {
                 let entryPoint = EntryPoint(dateTime: entryPoint[dateTime], temperature: entryPoint[temperature], humidity: entryPoint[humidity])
                 
                 entryPoints.append(entryPoint)
-                
             }
         } catch  {
             print(error)
@@ -73,7 +72,6 @@ class SQLCommands {
             print("DataBase Connection Error")
             return
         }
-        
         do {
             try db.run(table.delete())
             

@@ -14,14 +14,24 @@ class ChartViewController: UIViewController {
     
     @IBOutlet weak var chartView: CombinedChartView!
     
+    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var addPointButton: UIButton!
+    
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBAction func logoutTapped(_ sender: UIButton) {
+        Authentication.shared.signOut(viewController: self)
+    }
     @IBAction func clearPointsTapped(_ sender: UIButton) {
+        showProgress(title: "")
         entryPoints.removeAll()
         shouldHideData = true
         updateChartData()
-        DatabaseFB.shared.removeAll(callback: { err, status in
+        DatabaseFB.shared.removeAll(callback: {[weak self] err, status in
             if let err = err {
                 print(err)
+                self?.showError(title: "Try Again")
             }
+            self?.showSuccess(title: "")
             
         })
         SQLCommands.clearEntrypoints()
@@ -41,9 +51,17 @@ class ChartViewController: UIViewController {
         configureChartView()
         
         addObserverOfEntryPoints()
+        
+        configureButtons()
     }
     deinit {
         EntryPoint.ref.removeAllObservers()
+    }
+    
+    func configureButtons(){
+        clearButton.makeRounded()
+        addPointButton.makeRounded()
+        logoutButton.makeRounded()
     }
     
     func addObserverOfEntryPoints(){
@@ -64,12 +82,11 @@ class ChartViewController: UIViewController {
     }
     
     func configureChartView(){
-        self.title = "Combined Chart"
+        self.title = "Thermo Chart"
         
         chartView.chartDescription.enabled = true
         chartView.drawBarShadowEnabled = false
         chartView.highlightFullBarEnabled = false
-        
         
         chartView.extraTopOffset = 30
         let l = chartView.legend
@@ -124,19 +141,17 @@ class ChartViewController: UIViewController {
         }
         
         let set = LineChartDataSet(entries: entries, label: "Temperature")
-        set.setColor(.red)
+        set.setColor(UIColor(named: "chartYellow")!)
         set.lineWidth = 3
-        set.setCircleColor(.red)
+        set.setCircleColor(UIColor(named: "chartYellow")!)
         set.circleRadius = 7
         set.circleHoleRadius = 2.5
-        set.fillColor = .red
+        set.fillColor = UIColor(named: "chartYellow")!
         set.mode = .cubicBezier
         set.drawValuesEnabled = true
         set.valueFont = .systemFont(ofSize: 15, weight: .bold)
-        set.valueTextColor = .black
-        set.valueFormatter = BarChartValueFormatter()
-        
-        
+        set.valueTextColor = UIColor(named: "chartYellowText")!
+        set.valueFormatter = BarChartValueFormatterTemperature()
         set.axisDependency = .right
         
         let data = LineChartData(dataSet: set)
@@ -153,16 +168,16 @@ class ChartViewController: UIViewController {
         }
         
         let set = BarChartDataSet(entries: entries, label: "Humidity")
-        set.setColor(.cyan)
-        set.valueTextColor = .blue
+        set.setColor(UIColor(named: "chartBlue")!)
+        set.valueTextColor = UIColor(named: "chartBlueText")!
         set.valueFont = .systemFont(ofSize: 15, weight: .bold)
         set.axisDependency = .left
         set.barBorderColor = .black
         set.barBorderWidth = 0.5
-        set.valueFormatter = BarChartValueFormatter()
+        set.valueFormatter = BarChartValueFormatterHumidity()
+        
         
         let data = BarChartData(dataSet: set)
-        
         data.barWidth = 0.75
         
         return data
@@ -170,14 +185,23 @@ class ChartViewController: UIViewController {
 }
 extension ChartViewController: AxisValueFormatter {
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        return entryPoints[Int(value) % entryPoints.count].dateTime
+        var str = entryPoints[Int(value) % entryPoints.count].dateTime
+        str.insert("\n", at: str.index(str.startIndex, offsetBy: 10))
+        return str
     }
 }
 
-public  class  BarChartValueFormatter :  NSObject ,  ValueFormatter {
+public  class  BarChartValueFormatterTemperature :  NSObject ,  ValueFormatter {
     
     public  func  stringForValue( _  value:  Double,  entry:  ChartDataEntry,  dataSetIndex:  Int, viewPortHandler: ViewPortHandler?)  ->  String {
-        return  String(Int(entry.y))
+        return  String(Int(entry.y)) + "°C"
+    }
+}
+
+public  class  BarChartValueFormatterHumidity :  NSObject ,  ValueFormatter {
+    
+    public  func  stringForValue( _  value:  Double,  entry:  ChartDataEntry,  dataSetIndex:  Int, viewPortHandler: ViewPortHandler?)  ->  String {
+        return  String(Int(entry.y)) + "%"
     }
 }
 

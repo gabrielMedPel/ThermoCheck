@@ -10,9 +10,12 @@ import LMGaugeViewSwift
 
 class AddNewPointViewController: UIViewController{
     
+    @IBOutlet weak var saveButton: UIButton!
+    
     @IBOutlet weak var dateTimePicker: UIDatePicker!
     @IBOutlet weak var temperaturePicker: UIPickerView!
     @IBOutlet weak var humidityPicker: UIPickerView!
+    
     @IBOutlet weak var temperatureGauge: GaugeView!
     @IBOutlet weak var humidityGauge: GaugeView!
     
@@ -26,6 +29,7 @@ class AddNewPointViewController: UIViewController{
         showProgress(title: "")
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
+        
         let selectedDate: String = dateFormatter.string(from: dateTimePicker.date)
         
         let entryPoint = EntryPoint(dateTime: selectedDate, temperature: temperatureSelected, humidity: humiditySelected)
@@ -38,7 +42,6 @@ class AddNewPointViewController: UIViewController{
         SQLCommands.insert(entryPoint)
     }
     func saveFirebase(entryPoint: EntryPoint){
-        
         entryPoint.save { [weak self] error, status in
             if let error = error {
                 print(error)
@@ -55,8 +58,13 @@ class AddNewPointViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureButtons()
         configureGauge()
         configurePickers()
+    }
+    
+    func configureButtons(){
+        saveButton.makeRounded()
     }
     
     func configureGauge(){
@@ -67,22 +75,17 @@ class AddNewPointViewController: UIViewController{
         temperatureGauge.unitOfMeasurementFont = .boldSystemFont(ofSize: 15)
         temperatureGauge.showMinMaxValue = false
         temperatureGauge.value = -10
-        
-        temperatureGauge.valueTextColor = .red
+        temperatureGauge.valueTextColor = UIColor(named: "chartYellow")!
         temperatureGauge.delegate = self
         
         humidityGauge.minValue = 0
         humidityGauge.maxValue = 100
         humidityGauge.numOfDivisions = 0
         humidityGauge.value = 0
-        
         humidityGauge.unitOfMeasurement = "%"
         humidityGauge.unitOfMeasurementFont = .boldSystemFont(ofSize: 15)
-        
         humidityGauge.showMinMaxValue = false
-        
-        
-        humidityGauge.valueTextColor = .blue
+        humidityGauge.valueTextColor = UIColor(named: "chartBlue")!
         humidityGauge.delegate = self
     }
     
@@ -100,9 +103,9 @@ class AddNewPointViewController: UIViewController{
 extension AddNewPointViewController: GaugeViewDelegate {
     func ringStokeColor(gaugeView: GaugeView, value: Double) -> UIColor {
         if gaugeView.maxValue == 100{
-            return .blue
+            return UIColor(named: "chartBlue")!
         }else{
-            return .red
+            return UIColor(named: "chartYellow")!
         }
     }
 }

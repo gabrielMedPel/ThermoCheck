@@ -45,7 +45,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eO1-xj-kfH">
                                         <rect key="frame" x="147.5" y="145" width="55" height="30"/>
                                         <color key="backgroundColor" red="0.093328632414340973" green="0.32383537292480469" blue="0.55026036500930786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="  Login  ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -62,20 +62,20 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wh3-rD-lES">
-                                <rect key="frame" x="32" y="326.5" width="350" height="28"/>
+                                <rect key="frame" x="32" y="326.5" width="350" height="27"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atu-hH-saQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="171" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="1" height="-1"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBo-KZ-O0m">
-                                        <rect key="frame" x="179" y="0.0" width="171" height="28"/>
+                                        <rect key="frame" x="179" y="0.0" width="171" height="27"/>
                                         <color key="backgroundColor" red="0.96494835615158081" green="0.98774534463882446" blue="0.96543020009994507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="  Create an account  "/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <state key="normal" title="Create an account"/>
                                         <connections>
                                             <action selector="registerTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3hH-vN-ypf"/>
                                         </connections>
@@ -98,10 +98,10 @@
                     </view>
                     <connections>
                         <outlet property="createButton" destination="sBo-KZ-O0m" id="OB4-5s-FuD"/>
+                        <outlet property="emailTextField" destination="VHF-OR-6bs" id="rKT-1z-bt9"/>
                         <outlet property="loginButton" destination="eO1-xj-kfH" id="TyT-z5-bbF"/>
                         <outlet property="passwordTextField" destination="Vow-yH-Y26" id="QpH-1s-rqT"/>
                         <outlet property="stack" destination="Vth-bF-awu" id="4AU-9V-yJU"/>
-                        <outlet property="usernameTextField" destination="VHF-OR-6bs" id="NOq-CT-r1O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -156,7 +156,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="fP2-jz-ls3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -170,6 +170,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="oeq-WS-nkZ"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Back to Login"/>
                                 <connections>
                                     <action selector="cancelTapped:" destination="4kD-FI-Sq7" eventType="touchUpInside" id="Qc3-sU-zKo"/>
@@ -193,9 +194,9 @@
                     <connections>
                         <outlet property="backButton" destination="I2c-d8-Kfb" id="psk-eM-9KI"/>
                         <outlet property="confirmPasswordTextField" destination="aCI-46-TuN" id="PCd-LT-WrJ"/>
+                        <outlet property="emailTextField" destination="GdR-xP-Vme" id="0K0-dv-K7e"/>
                         <outlet property="passwordTextField" destination="X96-sE-6zZ" id="tNg-3U-IbF"/>
                         <outlet property="signupButton" destination="9NF-B0-H2H" id="PPf-HQ-N8I"/>
-                        <outlet property="usernameTextField" destination="GdR-xP-Vme" id="sSR-4f-fev"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GrJ-8G-t7Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

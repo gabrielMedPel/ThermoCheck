@@ -49,7 +49,7 @@ class Authentication {
                 completion(false, "No User")
                 return
             }
-            completion(true, "Done")
+            completion(true, "")
         }
     }
     

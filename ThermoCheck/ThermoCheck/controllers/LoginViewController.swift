@@ -14,16 +14,21 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        if result?.isCancelled == true {
+            return
+        }
         showProgress(title: "Loggin...")
-        Authentication.shared.loginWithFacebook { (status) in
+        Authentication.shared.loginWithFacebook {[weak self] (status) in
             if status{
                 DispatchQueue.main.async {
-                    self.showSuccess(title: "")
-                    Router.shared.toMain(viewController: self)
+                    self?.showSuccess(title: "")
+                    if let mself = self{
+                        Router.shared.toMain(viewController: mself)
+                    }
                 }
             }else{
                 DispatchQueue.main.async {
-                    self.showError(title: "Some went wrong. Try Again")
+                    self?.showError(title: "Some went wrong. Try Again")
                 }
             }
         }
@@ -46,11 +51,11 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         let loginButtonFB = FBLoginButton()
         loginButtonFB.delegate = self
         loginButtonFB.permissions = ["public_profile", "email"]
-        loginButtonFB.layer.cornerRadius = 10
+        loginButtonFB.makeRounded()
         stack.insertArrangedSubview(loginButtonFB, at: 4)
         
-        loginButton.layer.cornerRadius = 10
-        createButton.layer.cornerRadius = 10
+        loginButton.makeRounded()
+        createButton.makeRounded()
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
@@ -64,13 +69,16 @@ class LoginViewController: UIViewController, LoginButtonDelegate {
         
         Authentication.shared.login(email: email, password: password) { (status) in
             if status{
-                DispatchQueue.main.async {
-                    self.showSuccess(title: "")
-                    Router.shared.toMain(viewController: self)
+                DispatchQueue.main.async {[weak self] in
+                    self?.showSuccess(title: "")
+                    if let mself = self{
+                        Router.shared.toMain(viewController: mself)
+                    }
                 }
             }else{
-                DispatchQueue.main.async {
-                    self.showError(title: "Something went wrong. Check the fields and Try Again")
+                DispatchQueue.main.async {[weak self] in
+                    sender.isEnabled = true
+                    self?.showError(title: "Something went wrong.", subtitle: "Check the fields and Try Again")
                 }
             }
         }

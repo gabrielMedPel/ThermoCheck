@@ -17,44 +17,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3e-S3-Nn5">
-                                <rect key="frame" x="304" y="52" width="102" height="31"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" red="0.79607844350000001" green="0.035294115539999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Clear Points"/>
-                                <connections>
-                                    <action selector="clearPointsTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Y2Z-n7-gYH"/>
-                                </connections>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clouds" translatesAutoresizingMaskIntoConstraints="NO" id="BlV-XI-ays">
+                                <rect key="frame" x="-593" y="-85.5" width="1600" height="1067"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXU-nu-ue5" customClass="CombinedChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="91" width="382" height="600"/>
+                                <rect key="frame" x="16" y="87" width="382" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHV-we-RlI">
-                                <rect key="frame" x="149.5" y="723" width="115" height="30"/>
-                                <color key="backgroundColor" red="0.89009225368499756" green="0.97123819589614868" blue="0.96153289079666138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="  Add new Point  "/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="WYO-xz-rGK">
+                                <rect key="frame" x="8" y="719" width="398" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHV-we-RlI">
+                                        <rect key="frame" x="0.0" y="0.0" width="188.5" height="33"/>
+                                        <color key="backgroundColor" red="0.093328632414340973" green="0.32383537292480469" blue="0.55026036500930786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="  Add new Point  ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addNewPointTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CTj-cL-Bbt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3e-S3-Nn5">
+                                        <rect key="frame" x="209.5" y="0.0" width="188.5" height="33"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                        <color key="tintColor" red="0.093328632414340973" green="0.32383537292480469" blue="0.55026036500930786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="  Clear Points  "/>
+                                        <connections>
+                                            <action selector="clearPointsTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Y2Z-n7-gYH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="se7-9N-Oad">
+                                <rect key="frame" x="350" y="52" width="56" height="27"/>
+                                <color key="backgroundColor" red="0.18823529411764706" green="0.48593576439196373" blue="0.7803921568627451" alpha="0.5358167270531401" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="  Logout  "/>
                                 <connections>
-                                    <action selector="addNewPointTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CTj-cL-Bbt"/>
+                                    <action selector="logoutTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4nS-Jg-ETC"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uHV-we-RlI" firstAttribute="top" secondItem="gXU-nu-ue5" secondAttribute="bottom" constant="32" id="0WY-lH-rvA"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="s3e-S3-Nn5" secondAttribute="trailing" constant="8" id="CPP-X4-TcI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WYO-xz-rGK" secondAttribute="trailing" constant="8" id="3r2-7I-zxx"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gXU-nu-ue5" secondAttribute="trailing" constant="16" id="ELW-kw-kcT"/>
                             <constraint firstItem="gXU-nu-ue5" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.669643" id="KW5-YQ-wsp"/>
                             <constraint firstItem="gXU-nu-ue5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="KlQ-z8-ePN"/>
-                            <constraint firstItem="gXU-nu-ue5" firstAttribute="top" secondItem="s3e-S3-Nn5" secondAttribute="bottom" constant="8" id="RTD-pk-8xz"/>
-                            <constraint firstItem="uHV-we-RlI" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Ztd-ok-ko5"/>
-                            <constraint firstItem="s3e-S3-Nn5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="eQY-kn-GgH"/>
+                            <constraint firstItem="WYO-xz-rGK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="L3p-xA-JQb"/>
+                            <constraint firstItem="gXU-nu-ue5" firstAttribute="top" secondItem="se7-9N-Oad" secondAttribute="bottom" constant="8" id="RTD-pk-8xz"/>
+                            <constraint firstItem="se7-9N-Oad" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="br1-L1-Vaj"/>
+                            <constraint firstItem="WYO-xz-rGK" firstAttribute="top" secondItem="gXU-nu-ue5" secondAttribute="bottom" constant="32" id="fMw-Ea-3Po"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="se7-9N-Oad" secondAttribute="trailing" constant="8" id="hKz-TK-mZT"/>
+                            <constraint firstItem="BlV-XI-ays" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="ijL-60-vt3"/>
+                            <constraint firstItem="BlV-XI-ays" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="tbD-c7-KjU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addPointButton" destination="uHV-we-RlI" id="c4k-Rw-cVR"/>
                         <outlet property="chartView" destination="gXU-nu-ue5" id="uwB-Nh-8it"/>
+                        <outlet property="clearButton" destination="s3e-S3-Nn5" id="jIF-Qh-fX7"/>
+                        <outlet property="logoutButton" destination="se7-9N-Oad" id="TW1-W5-7W8"/>
                         <segue destination="ChK-V9-3VJ" kind="presentation" identifier="toAdd" modalTransitionStyle="coverVertical" id="amZ-Uk-P6a"/>
                     </connections>
                 </viewController>
@@ -70,6 +99,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clouds" translatesAutoresizingMaskIntoConstraints="NO" id="EZk-IP-e9h">
+                                <rect key="frame" x="-593" y="-112.5" width="1600" height="1067"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cYV-oY-R6g">
                                 <rect key="frame" x="16" y="8" width="382" height="506"/>
                                 <subviews>
@@ -133,11 +165,14 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpE-qS-TKg">
-                                <rect key="frame" x="364" y="8" width="34" height="20"/>
+                                <rect key="frame" x="348" y="8" width="50" height="20"/>
+                                <color key="backgroundColor" red="0.093328632414340973" green="0.32383537292480469" blue="0.55026036500930786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="J66-Ld-wbk"/>
                                 </constraints>
-                                <state key="normal" title="Save"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="  Save  "/>
                                 <connections>
                                     <action selector="saveTapped:" destination="ChK-V9-3VJ" eventType="touchUpInside" id="F9S-2V-x6d"/>
                                 </connections>
@@ -147,11 +182,11 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJP-f5-qJU" customClass="GaugeView" customModule="LMGaugeViewSwift">
                                         <rect key="frame" x="0.0" y="0.0" width="168" height="278"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZd-fG-72A" customClass="GaugeView" customModule="LMGaugeViewSwift">
                                         <rect key="frame" x="214" y="0.0" width="168" height="278"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -160,6 +195,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9oT-qb-eTx" firstAttribute="trailing" secondItem="JpE-qS-TKg" secondAttribute="trailing" constant="16" id="02C-l2-eyx"/>
+                            <constraint firstItem="EZk-IP-e9h" firstAttribute="centerY" secondItem="W97-69-Yz3" secondAttribute="centerY" id="02U-uB-S3X"/>
                             <constraint firstItem="cYV-oY-R6g" firstAttribute="leading" secondItem="9oT-qb-eTx" secondAttribute="leading" constant="16" id="8KA-ku-qb9"/>
                             <constraint firstItem="KXE-od-deX" firstAttribute="height" secondItem="W97-69-Yz3" secondAttribute="height" multiplier="0.33" id="GCG-Sa-foz"/>
                             <constraint firstItem="9oT-qb-eTx" firstAttribute="bottom" secondItem="KXE-od-deX" secondAttribute="bottom" constant="8" id="JTO-pM-7Hn"/>
@@ -168,6 +204,7 @@
                             <constraint firstItem="9oT-qb-eTx" firstAttribute="trailing" secondItem="KXE-od-deX" secondAttribute="trailing" constant="16" id="cil-dC-Y6n"/>
                             <constraint firstItem="9oT-qb-eTx" firstAttribute="trailing" secondItem="cYV-oY-R6g" secondAttribute="trailing" constant="16" id="j8e-zN-2jT"/>
                             <constraint firstItem="cYV-oY-R6g" firstAttribute="top" secondItem="9oT-qb-eTx" secondAttribute="top" constant="8" id="ldD-kl-H9s"/>
+                            <constraint firstItem="EZk-IP-e9h" firstAttribute="centerX" secondItem="W97-69-Yz3" secondAttribute="centerX" id="qbw-dp-YhL"/>
                             <constraint firstItem="KXE-od-deX" firstAttribute="top" secondItem="cYV-oY-R6g" secondAttribute="bottom" constant="8" id="uDK-5U-q8X"/>
                         </constraints>
                     </view>
@@ -175,6 +212,7 @@
                         <outlet property="dateTimePicker" destination="JCf-aE-gAZ" id="whp-Z5-wQg"/>
                         <outlet property="humidityGauge" destination="yZd-fG-72A" id="0JJ-nW-O2k"/>
                         <outlet property="humidityPicker" destination="sqg-Tk-mfa" id="ziD-A2-MDV"/>
+                        <outlet property="saveButton" destination="JpE-qS-TKg" id="7my-ml-xif"/>
                         <outlet property="temperatureGauge" destination="bJP-f5-qJU" id="3c6-ya-FGe"/>
                         <outlet property="temperaturePicker" destination="iau-NR-7LK" id="O6T-jn-Ipp"/>
                     </connections>
@@ -185,6 +223,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Clouds" width="1600" height="1067"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
